@@ -1,3 +1,5 @@
+import css from "./Options.module.css";
+
 function Options({
   value: { good, neutral, bad },
   onUpdate,
@@ -5,7 +7,7 @@ function Options({
   setFeedbacks,
 }) {
   return (
-    <div>
+    <div className={css.options}>
       <button onClick={() => onUpdate("good")}>Good: {good}</button>
       <button onClick={() => onUpdate("neutral")}>Neutral: {neutral}</button>
       <button onClick={() => onUpdate("bad")}>Bad: {bad}</button>

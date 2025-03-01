@@ -1,0 +1,40 @@
+.feedbacks {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.feedbacks p:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.feedbackGood {
+  color: #246100;
+}
+
+.feedbackNeutral {
+  color: goldenrod;
+}
+
+.feedbackBed {
+  color: rgb(155, 0, 0);
+}
+
+.feedbackTotal {
+  color: rgb(0, 225, 255);
+}
+
+.feedbackPositive {
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -38,13 +38,13 @@ function App() {
         total={totalFeedback}
         setFeedbacks={setFeedback}
       />
-      {totalFeedback && (
-        <Feedback
-          feedbacks={feedback}
-          total={totalFeedback}
-          positiv={positiveFeedback}
-        />
-      )}
+
+      <Feedback
+        feedbacks={feedback}
+        total={totalFeedback}
+        positiv={positiveFeedback}
+      />
+
       {!totalFeedback && <Notification />}
     </>
   );

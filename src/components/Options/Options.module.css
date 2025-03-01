@@ -1,0 +1,7 @@
+.options {
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
