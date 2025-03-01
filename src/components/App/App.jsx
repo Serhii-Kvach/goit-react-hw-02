@@ -14,12 +14,13 @@ function App() {
     return {
       good: 0,
       neutral: 0,
-      bed: 0,
+      bad: 0,
     };
   });
 
   let totalFeedback = feedback.good + feedback.neutral + feedback.bad;
-  let positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
+  let positiveFeedback =
+    totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
 
   const updateFeedback = (feedbackType) => {
     setFeedback({ ...feedback, [feedbackType]: feedback[feedbackType] + 1 });
@@ -39,13 +40,15 @@ function App() {
         setFeedbacks={setFeedback}
       />
 
-      <Feedback
-        feedbacks={feedback}
-        total={totalFeedback}
-        positiv={positiveFeedback}
-      />
-
-      {!totalFeedback && <Notification />}
+      {totalFeedback ? (
+        <Feedback
+          feedbacks={feedback}
+          total={totalFeedback}
+          positiv={positiveFeedback}
+        />
+      ) : (
+        <Notification />
+      )}
     </>
   );
 }
